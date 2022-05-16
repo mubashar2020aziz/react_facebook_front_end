@@ -9,6 +9,8 @@ import HelpOutlineIcon from '@mui/icons-material/HelpOutline';
 import WorkIcon from '@mui/icons-material/Work';
 import EventIcon from '@mui/icons-material/Event';
 import SchoolIcon from '@mui/icons-material/School';
+import CloseFriend from '../closeFriend/CloseFriend';
+import { Users } from '../../dummyData';
 
 const Sidebar = () => {
   return (
@@ -67,14 +69,9 @@ const Sidebar = () => {
           <button className="sidebarbutton">Show More</button>
           <hr className="sidebarhr" />
           <ul className="sidebarFriendList">
-            <li className="sidebarFriend">
-              <img
-                className="sidebarFriendImg"
-                src="/assets/person/2.jpeg"
-                alt="person2"
-              />
-              <span className="sidebarFriendName">Faham</span>
-            </li>
+            {Users.map((u) => (
+              <CloseFriend key={u.id} user={u} />
+            ))}
           </ul>
           {/* wrapper end */}
         </div>
